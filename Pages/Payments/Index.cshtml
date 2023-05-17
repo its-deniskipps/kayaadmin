@@ -1,0 +1,34 @@
+﻿@page
+@model kayaadmin.Pages.Payments.IndexModel
+@{
+}
+
+<br />
+<h2>Payment Details</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Customer Code</th>
+            <th>Payment Amount</th>
+            <th>Token</th>
+            <th>CreatedTime</th>
+            <th>Customer Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listPayments)
+        {
+            <tr>
+                <td>@item.custcode</td>
+                <td>@item.paymentAmt</td>
+                <td>@item.token</td>
+                <td>@item.CreatedTime</td>
+                <td>@item.lastname</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="Payments/Edit?custcode=@item.custcode">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

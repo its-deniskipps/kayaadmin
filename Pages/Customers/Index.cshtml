@@ -1,0 +1,34 @@
+﻿@page
+@model kayaadmin.Pages.Customers.IndexModel
+@{
+}
+
+<br />
+<h2>List of Customers</h2> 
+<a class='btn btn-primary btn-sm' href='Customers/Create'>New Customer</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Customer Code</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.listCustomers)
+        {
+            <tr>
+                <td>@item.firstname</td>
+                <td>@item.lastname</td>
+                <td>@item.custcode</td>
+                <td>@item.email</td>
+                <td>@item.phoneno</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="Customers/Edit?custcode=@item.custcode">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
